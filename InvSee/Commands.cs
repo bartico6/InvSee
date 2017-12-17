@@ -54,7 +54,7 @@ namespace InvSee
 						args.Player.PluginErrorMessage("You are not copying any user!");
 					else
 					{
-						User user = TShock.Users.GetUserByName(info.CopyingUserName);
+						UserAccount user = TShock.UserAccounts.GetUserAccountByName(info.CopyingUserName);
 						TSPlayer player;
 						if (user == null)
 						{
@@ -114,7 +114,7 @@ namespace InvSee
 							return;
 						}
 
-						User user = TShock.Users.GetUserByName(playerName);
+						UserAccount user = TShock.UserAccounts.GetUserAccountByName(playerName);
 						if (user == null)
 						{
 							args.Player.PluginErrorMessage($"Invalid player or account '{playerName}'!");
@@ -134,15 +134,15 @@ namespace InvSee
 					}
 					else
 					{
-						if(players[0].User == null)
+						if(players[0].Account == null)
 						{
 							args.Player.PluginErrorMessage($"Invalid player or account '{playerName}'!");
 							return;
 						}
-						userid = players[0].User.ID;
+						userid = players[0].Account.ID;
 						players[0].PlayerData.CopyCharacter(players[0]);
 						data = players[0].PlayerData;
-						name = players[0].User?.Name ?? "";
+						name = players[0].Account?.Name ?? "";
 					}
 					try
 					{

@@ -16,6 +16,10 @@ InvSee/bin/Mysql.Data.dll
 
 [Dd]ebug/
 [Rr]elease/
+bin/*
+obj/*
+*/bin/*
+*/obj/*
 x64/
 build/
 [Oo]bj/
@@ -159,3 +163,5 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+
+References/*
